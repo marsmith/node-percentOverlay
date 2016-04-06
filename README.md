@@ -4,8 +4,9 @@
 * all node-gdal based
 
 ```
-sudo apt-get install npm node nodejs-legacy
+sudo apt-get install npm nodejs-legacy
 npm install -g npm forever
+sudo npm install npm -g
 ```
 
 clone repo
