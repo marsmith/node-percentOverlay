@@ -19,7 +19,8 @@ to start:
 ```
 npm start
 ```
-OR
+
+OR to start as background process:
 ```
-forever start /bin/www
+forever start ./bin/www
 ```
