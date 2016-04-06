@@ -14,3 +14,8 @@ git clone https://github.com/marsmith/node-zonalstats.git
 cd node-zonalstats
 npm install
 ```
+
+to start:
+```
+npm start
+```
