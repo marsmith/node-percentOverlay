@@ -5,7 +5,7 @@
 
 ```
 sudo apt-get install npm node nodejs-legacy
-npm install -g npm
+npm install -g npm forever
 ```
 
 clone repo
@@ -18,4 +18,8 @@ npm install
 to start:
 ```
 npm start
+```
+OR
+```
+forever start /bin/www
 ```
