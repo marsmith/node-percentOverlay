@@ -3,6 +3,7 @@ var router = express.Router();
 var gdal = require("gdal");
 
 router.post('/', function(req, res, next) {
+    console.log('request: ',req.body)
 
     var input = gdal.open(JSON.stringify(req.body.features[0].geometry))
     var inputLayer = input.layers.get(0);
