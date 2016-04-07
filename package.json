@@ -7,7 +7,7 @@
   ],
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node --expose-gc --max-old-space-size=256 ./bin/www"
   },
   "dependencies": {
     "body-parser": "~1.13.2",

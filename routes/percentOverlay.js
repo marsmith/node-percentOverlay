@@ -3,7 +3,8 @@ var router = express.Router();
 var gdal = require("gdal");
 
 router.post('/', function(req, res, next) {
-    console.log('request: ',req.body)
+   
+    console.log('before mem usage(mb): ',process.memoryUsage().rss / 1048576);
 
     var input = gdal.open(JSON.stringify(req.body.features[0].geometry))
     var inputLayer = input.layers.get(0);
@@ -46,6 +47,16 @@ router.post('/', function(req, res, next) {
     //close datasets
     input.close();
     region.close();
+
+    if (global.gc) {
+        global.gc();
+    } 
+    else {
+        console.log('Garbage collection unavailable.  Pass --expose-gc '
+        + 'when launching node to enable forced garbage collection.');
+    }
+    
+    console.log('after mem usage(mb): ',process.memoryUsage().rss / 1048576);
     
     //send output
     res.json(output)    
