@@ -40,13 +40,20 @@ router.post('/', function(req, res, next) {
                     console.log('[intersectArea,totalArea]: ', intersectArea,totalArea)
                     output.push({"name":name,"code":gridcode,"percent":(intersectArea/totalArea)*100})
                 }
+                inputGeom = null;
             })
+            
+            regionGeom = null;
         });
     })
     
     //close datasets
     input.close();
     region.close();
+    inputLayer = null;
+    regionLayer = null;
+    regionGeom = null;
+    inputGeom = null;
 
     if (global.gc) {
         global.gc();
