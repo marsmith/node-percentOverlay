@@ -43,6 +43,10 @@ router.post('/', function(req, res, next) {
         });
     })
     
+    //close datasets
+    input.close();
+    region.close();
+    
     //send output
     res.json(output)    
 });
