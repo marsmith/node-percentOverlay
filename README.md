@@ -25,3 +25,13 @@ OR to start as background process:
 ```
 forever start ./bin/www
 ```
+
+OR run with VS Code built in debugger
+
+**To test**
+use Chrome REST test add-on such as: "Advanced REST Client"
+
+ - change to "POST", set type as "application/json"
+ - change request URL to "http://localhost:3000/percentOverlay"
+ - post body the contents of /input/basinSS.geojson
+ - send the request
