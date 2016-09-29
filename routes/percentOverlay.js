@@ -6,7 +6,7 @@ router.post('/', function(req, res, next) {
    
     console.log('before mem usage(mb): ',process.memoryUsage().rss / 1048576);
 
-    var input = gdal.open(JSON.stringify(req.body.features[0].geometry))
+    var input = gdal.open(JSON.stringify(req.body.geometry))
     var inputLayer = input.layers.get(0);
     console.log('\nInput Driver: ' + input.driver.description);
     
